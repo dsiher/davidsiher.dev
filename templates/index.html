@@ -1,0 +1,103 @@
+{% import "macros/head.html" as head -%}
+{% import "macros/logo.html" as logo -%}
+{% import "macros/header.html" as header -%}
+{% import "macros/extended_header.html" as extended_header -%}
+{% import "macros/posts.html" as posts -%}
+{% import "macros/menu.html" as menu -%}
+{% import "macros/footer.html" as footer -%}
+{% import "macros/extended_footer.html" as extended_footer -%}
+
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+
+<head>
+    {%- block title -%}
+    <title>{{ config.title }}</title>
+    {%- endblock title -%}
+
+    {%- block general_meta -%}
+    {{ head::general_meta() }}
+    {%- endblock general_meta -%}
+
+    {%- block fonts -%}
+    {{ head::fonts() }}
+    {%- endblock fonts -%}
+
+    {%- block css -%}
+    {{ head::styling() }}
+    {%- endblock css -%}
+
+    {%- block favicon -%}
+    {{ head::favicon() }}
+    {%- endblock favicon -%}
+
+    {%- block rss -%}
+    {{ head::rss() }}
+    {%- endblock rss -%}
+
+    {%- block math -%}
+    {%- endblock math -%}
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Name + Menu -->
+        {%- block header -%}
+        {{ header::header() }}
+        {%- endblock header -%}
+
+        <!-- About -->
+        <div class="section">
+            <h1 class="post-title">
+                {{ "About" }}
+            </h1>
+            {% set blurb = get_page(path="about.md") %}
+            {{ blurb.content | safe }}
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <h1 class="post-title">
+                {{ "Projects" }}
+            </h1>
+            {% set projects = get_section(path="projects/_index.md") %}
+            {% set max = config.extra.max_proj %}
+            {% for proj in projects.pages | slice(end=max) %}
+            {{ posts::generate_proj(proj=proj) }}
+            {% endfor %}
+        </div>
+        <div class="section">
+            <h1 class="post-title">
+                {{ "Teaching" }}
+            </h1>
+            {% set teachings = get_section(path="teachings/_index.md") %}
+            {% set max = config.extra.max_teach %}
+            {% for teach in teachings.pages | slice(end=max) %}
+            {{ posts::generate_shortteach(teach=teach) }}
+            {% endfor %}
+        </div>
+        {#-
+        I keep pagination out of list, unlike Terminal, because I don't
+        like how the pagination buttons move with the width of the content
+        div.
+        -#}
+
+        {%- block footer -%}
+        <footer class="footer">
+            <div class="footer__inner">
+                {%- block copyright -%}
+                {{ footer::copyright() }}
+                {%- endblock copyright -%}
+
+                {%- block script -%}
+                {{ footer::script() }}
+                {%- endblock script -%}
+            </div>
+            {{ extended_footer::extended_footer() }}
+        </footer>
+        {%- endblock footer -%}
+    </div>
+</body>
+
+</html>

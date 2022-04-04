@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% import "macros/posts.html" as posts %}
+
+{% block content %}
+<section>
+    <h2>Projects</h2>
+    {% set projects = get_section(path="projects/_index.md") %}
+    {% for proj in projects.pages %}
+    {{ posts::generate_proj(post=post) }}
+    {% endfor %}
+</section>
+
+{% endblock content %}

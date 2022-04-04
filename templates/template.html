@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% import "macros/posts.html" as posts %}
+
+{% block content %}
+<section>
+    <h2>Teaching experience</h2>
+    {% set teachings = get_section(path="teachings/_index.md") %}
+    {% for teach in teachings.pages %}
+    {{ posts::generate_teach(teach=teach) }}
+    {% endfor %}
+</section>
+
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% macro generate_proj(proj) %}
+<div class="post-content">
+    <h2 class="mini-title">{{ proj.title | safe }}</h2>
+    <div>
+        {{ proj.content | safe }}
+    </div>
+    <div class="links">
+        {% for link in proj.extra.links %}
+        [<a href="{{ link.url }}">{{ link.name }}</a>]
+        {% endfor %}
+    </div>
+</div>
+{% endmacro generate_proj %}
+
+{% macro generate_teach(teach) %}
+<div class="post-content">
+    <h2 class="mini-title">{{ teach.title | safe }} </h2>
+    <div class="links">
+        {{ teach.extra.semesters | safe }}
+    </div>
+    <div>
+        {{ teach.content | safe }}
+    </div>
+</div>
+{% endmacro generate_teach %}
+
+{% macro generate_shortteach(teach) %}
+<div class="post-content">
+    <div>
+        {{ teach.title | safe }}
+    </div>
+    <div class="right">
+        {{ teach.extra.semesters | safe }}
+    </div>
+</div>
+{% endmacro generate_shortteach %}
