@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>David Siher</title>
+	<subtitle>My personal website</subtitle>
+	<link href="https://davidsiher.dev/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://davidsiher.dev"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2022-02-01T00:00:00+00:00</updated>
+	<id>https://davidsiher.dev/atom.xml</id>
+	<entry xml:lang="en">
+		<title>TA for CS 4160&#x2F;5160 (Formal Verification)</title>
+		<published>2022-02-01T00:00:00+00:00</published>
+		<updated>2022-02-01T00:00:00+00:00</updated>
+		<link href="https://davidsiher.dev/teachings/cs4160/" type="text/html"/>
+		<id>https://davidsiher.dev/teachings/cs4160/</id>
+		<content type="html"></content>
+	</entry>
+	<entry xml:lang="en">
+		<title>A heterogenous graphics language</title>
+		<published>2021-03-20T00:00:00+00:00</published>
+		<updated>2021-03-20T00:00:00+00:00</updated>
+		<link href="https://davidsiher.dev/projects/slang/" type="text/html"/>
+		<id>https://davidsiher.dev/projects/slang/</id>
+		<content type="html">&lt;p&gt;Currently, graphics programming relies on writing CPU host code (written in a CPU
+language such as C++) that will then execute GPU shaders (written in a shading 
+language such as HLSL). This opens the door to a variety of bugs that thrive in 
+this CPU-GPU disconnect. &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;shader-slang&#x2F;slang&quot;&gt;Slang&lt;&#x2F;a&gt; took the first steps towards bridging this gap
+by giving programmers the ability to compile from slang to both CPU and GPU targets.
+I am currently working on extending Slang to see how it might support fully heterogeneous compilation,
+allowing programmers to specify and execute an entire graphics pipeline from within
+a single .slang file.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>TA for CS 3110 (Data Structures and Functional Programming)</title>
+		<published>2020-09-01T00:00:00+00:00</published>
+		<updated>2020-09-01T00:00:00+00:00</updated>
+		<link href="https://davidsiher.dev/teachings/cs3110/" type="text/html"/>
+		<id>https://davidsiher.dev/teachings/cs3110/</id>
+		<content type="html"></content>
+	</entry>
+</feed>

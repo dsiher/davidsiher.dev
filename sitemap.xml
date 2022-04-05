@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://davidsiher.dev/</loc>
+    </url>
+    <url>
+        <loc>https://davidsiher.dev/about/</loc>
+    </url>
+    <url>
+        <loc>https://davidsiher.dev/projects/</loc>
+    </url>
+    <url>
+        <loc>https://davidsiher.dev/projects/slang/</loc>
+        <lastmod>2021-03-20</lastmod>
+    </url>
+    <url>
+        <loc>https://davidsiher.dev/teachings/</loc>
+    </url>
+    <url>
+        <loc>https://davidsiher.dev/teachings/cs3110/</loc>
+        <lastmod>2020-09-01</lastmod>
+    </url>
+    <url>
+        <loc>https://davidsiher.dev/teachings/cs4160/</loc>
+        <lastmod>2022-02-01</lastmod>
+    </url>
+</urlset>
